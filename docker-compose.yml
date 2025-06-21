@@ -8,9 +8,9 @@ services:
     volumes:
       - ./out:/app/out
     command: >
-      sh -c "javac -cp lib/jakarta.servlet-api-6.0.0.jar -d out/WEB-INF/classes src/servlets/HelloServlet.java &&
+      sh -c "find src -name '*.java' > sources.txt &&
+             javac -cp lib/jakarta.servlet-api-6.0.0.jar -d out/WEB-INF/classes @sources.txt &&
              cp web/WEB-INF/web.xml out/WEB-INF/"
-
 
   tomcat:
     image: tomcat:10.1

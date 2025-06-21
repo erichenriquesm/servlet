@@ -8,8 +8,18 @@
         <servlet-class>servlets.HelloServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>Teste</servlet-name>
+        <servlet-class>servlets.Teste</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Teste</servlet-name>
+        <url-pattern>/teste</url-pattern>
     </servlet-mapping>
 </web-app>
