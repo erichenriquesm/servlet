@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  build-war:
+    build:
+      context: .
+    container_name: servlet-builder
+    volumes:
+      - ./out:/app/out
+    command: >
+      sh -c "javac -cp lib/jakarta.servlet-api-6.0.0.jar -d out/WEB-INF/classes src/servlets/HelloServlet.java &&
+             cp web/WEB-INF/web.xml out/WEB-INF/"
+
+
+  tomcat:
+    image: tomcat:10.1
+    container_name: tomcat-servlet
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./out:/usr/local/tomcat/webapps/ROOT
+    restart: unless-stopped
+    depends_on:
+      - build-war
