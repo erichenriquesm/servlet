@@ -9,7 +9,7 @@
     </servlet>
 
     <servlet>
-        <servlet-name>Teste</servlet-name>
+        <servlet-name>TesteServlet</servlet-name>
         <servlet-class>servlets.Teste</servlet-class>
     </servlet>
 
@@ -19,7 +19,7 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>Teste</servlet-name>
+        <servlet-name>TesteServlet</servlet-name>
         <url-pattern>/teste</url-pattern>
     </servlet-mapping>
 </web-app>

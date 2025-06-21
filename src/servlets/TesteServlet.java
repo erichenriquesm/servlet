@@ -5,7 +5,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Teste extends HttpServlet {
+public class TesteServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         System.out.println("Servlet inicializado (init)");
